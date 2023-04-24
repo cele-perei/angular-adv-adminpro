@@ -17,5 +17,7 @@ export class PagesComponent {
   }
   ngOnInit(): void {
     customInitFunctions();
+    customInitFunctions();
+
   }
 }
