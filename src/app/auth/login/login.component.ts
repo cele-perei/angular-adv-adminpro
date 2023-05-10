@@ -81,6 +81,7 @@ export class LoginComponent implements OnInit, AfterViewInit{
         }, (err) => {
           //si sucede un error
           Swal.fire('Error', err.error.msg, 'error');
+          //console.log(err);
         } );
                         
                          

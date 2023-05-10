@@ -1,4 +1,6 @@
-import { uid } from "chart.js/dist/helpers/helpers.core"
+import { environment } from "src/environments/environments";
+
+const base_url = environment.base_url;
 
 export class Usuario {
 
@@ -12,4 +14,16 @@ export class Usuario {
         public uid?: string 
     ) { }
 
+    get imagenUrl() {
+        // /uploads/usuarios/no-image
+        if(this.img?.includes('https')){
+            return this.img;
+        }
+
+        if( this.img ){
+            return `${base_url}/uploads/usuarios/${this.img}`;
+        } else {
+            return `${base_url}/uploads/usuarios/no-image`;
+        }
+    }
 }
