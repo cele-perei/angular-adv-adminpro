@@ -1,6 +1,8 @@
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 
+import { AuthGuard } from '../guards/auth.guard';
+
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProgressComponent } from './progress/progress.component';
@@ -8,9 +10,10 @@ import { Grafica1Component } from './grafica1/grafica1.component';
 import { AccountSettingComponent } from './account-setting/account-setting.component';
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
-import { AuthGuard } from '../guards/auth.guard';
 import { PerfilComponent } from './perfil/perfil.component';
 
+//Mantenimientos
+import { UsuariosComponent } from './mantenimientos/usuarios/usuarios.component';
 
 const routes: Routes = [
     { 
@@ -24,7 +27,10 @@ const routes: Routes = [
           { path: 'account-setting', component: AccountSettingComponent, data: {titulo: 'Account Settings'} },
           { path: 'promesas', component: PromesasComponent, data: {titulo: 'Promesas'} },      
           { path: 'rxjs', component: RxjsComponent, data: {titulo: 'RXJS'} },      
-          { path: 'perfil', component: PerfilComponent, data: {titulo: 'Perfil de usuario'} }      
+          { path: 'perfil', component: PerfilComponent, data: {titulo: 'Perfil de usuario'} },
+          
+          //Mantenimientos
+          { path: 'usuarios', component: UsuariosComponent, data: {titulo: 'Usuario de aplicación'} }      
         ]
     },
 ];
