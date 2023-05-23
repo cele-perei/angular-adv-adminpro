@@ -34,13 +34,8 @@ export class UsuariosComponent implements OnInit, OnDestroy {
     this.cargarUsuarios();
 
     this.imgSubs = this.modalImagenService.nuevaImagen
-      .pipe(
-        delay(1000)
-        )
-      .subscribe( 
-        img => {
-          this.cargarUsuarios()
-        });
+      .pipe(delay(1000))
+      .subscribe( img => this.cargarUsuarios() );
   }
 
   cargarUsuarios() {
@@ -73,7 +68,7 @@ export class UsuariosComponent implements OnInit, OnDestroy {
     }
 
     return this.busquedasService.buscar( 'usuarios', termino )
-        .subscribe( resp => {
+        .subscribe( (resp: Usuario[]) => {
 
           this.usuarios = resp;
 

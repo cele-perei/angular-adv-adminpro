@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit, AfterViewInit{
   }
 
   handleCredentialResponse ( response: any ){
-    console.log("Encoded JWT ID token: " + response.credential);
+    //console.log("Encoded JWT ID token: " + response.credential);
     this.usuarioService.loginGoogle(response.credential).subscribe( resp => {
           //Navegar al Dashboard
           this.ngZone.run( () => {
